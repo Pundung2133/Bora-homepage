@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'goorm-sans-bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+header nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+body, html {
+    font-family: 'goorm-sans-bold', sans-serif;
+}

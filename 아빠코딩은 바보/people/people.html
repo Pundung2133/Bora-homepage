@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/asstes/icon/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BorA - Home</title>
+    <link rel="stylesheet" href="/css/people.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header>
+        <!-- Image on the left -->
+        <img onclick="gotohome()" src="/asstes/img/iocn.jpg" alt="Logo or Icon">
+        
+        <!-- Navigation on the right -->
+        <nav id="nav">
+            <a href="/about/about.html" class="nav-link" data-target="about">About</a>
+            <a href="/Expertise/Expertise.html" class="nav-link" data-target="expertise">Expertise</a>
+            <a href="/people/people.html" class="nav-link" data-target="people">People</a>
+            <a href="/Contact/Contact.html" class="nav-link" data-target="contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>피플</h1>
+    </div>
+    <footer>
+        <div class="footer">
+            Grow your business with BorA<br>
+            A. 인천광역시 연수구 컨벤시아대로 165 포스코타워 26층   <a class="bbaro" href="https://www.youtube.com/@mine_pung_dung">By:마크에풍덩</a><br>
+            카카오톡: <a class="bbaro" href="/">바로가기</a>
+        </div>
+    </footer>
+    
+    <script>
+        function gotohome () {
+           window.location.href = '/index.html'; 
+
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.nav-link');
+            
+            // Function to activate a link
+            function activateLink(target) {
+                links.forEach(link => link.classList.remove('active'));
+                const activeLink = document.querySelector(`.nav-link[data-target="${target}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+
+            // Handle link clicks
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    activateLink(target);
+                });
+            });
+
+            // Handle page load - activate the link based on URL hash or default to 'home'
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash) {
+                activateLink(initialHash);
+            } else {
+                // Delay the activation to ensure the animation is visible
+                setTimeout(() => activateLink('people'), 100); // 100ms delay for animation visibility
+            }
+        });
+    </script>
+</body>
+</html>

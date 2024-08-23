@@ -1,0 +1,113 @@
+
+
+body {
+    font-family: 'goorm-sans-bold', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 스크롤바를 숨깁니다. */
+}
+
+header {
+    background-color: white;
+    padding: 20px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+header img {
+    height: 40px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+header nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+video-container {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 56.25%; /* 16:9 비율 */
+    height: 0;
+    overflow: hidden;
+}
+
+video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333399;
+    color: white;
+    text-align: center;
+    padding: 20px 5%;
+    border-top: 1px solid #ccc;
+    margin-top: auto; /* Flexbox 컨테이너에서 footer를 맨 아래로 밀기 */
+    position: relative;
+}
+
+.bbaro {
+    color: aqua;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 5%;
+    }
+
+    header img {
+        height: 30px;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header nav a {
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+    .overlay-text {
+        font-size: 2em;
+        padding: 10px;
+    }
+
+    footer {
+        padding: 10px 5%;
+    }
+}
